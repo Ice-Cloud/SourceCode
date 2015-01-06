@@ -14,8 +14,11 @@ $(document).ready(function() {
 	$(".nav.masthead-nav a").click(function() {
 		var id="#"+$(this).attr("id").substring(0, $(this).attr("id").length-2);
 
-		if (id == "#contact"){
+		if ((id == "#contact")|| (id == "#about")){
 			$("#background-picture").removeAttr("style");
+		}
+		else {
+			document.getElementById("background-picture").setAttribute("style", "background-image: url('img/cloud.png'); background-repeat: no-repeat; background-position: center;");
 		}
 
 		$(".inner.cover").removeClass("show");
