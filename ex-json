@@ -1,0 +1,10 @@
+var array = {
+	1 => "asd" , 
+	2 => "asdf" , 
+	3 => "trei"
+	};
+
+var jsJson = request(php);
+
+jsJson[0]['id'] 
+
