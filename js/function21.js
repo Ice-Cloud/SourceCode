@@ -29,7 +29,7 @@ $(document).ready(function() {
 		$(id).addClass("show");
 	});
 
-	$("#send").click(function(){
+	$("#signup2").click(function(){
 		if ($('input#checkbox-terms').prop('checked') == false) {
 			alert("Nu ai citit!");
 		}
@@ -45,7 +45,7 @@ $(document).ready(function() {
 		// tipul request-ului
 		type: "GET",
 		// adresa unde se face reuqest-ul
-		url: "http://localhost/rox.php",
+		url: "http://localhost/rox2.php",
 		// se foloseste pentru a identifica tipul datelor (daca nu se specifica datele vor fi preluate ca si String)
 		dataType: "json",
 		// daca request-ul reuseste 
@@ -74,20 +74,17 @@ $(document).ready(function() {
 			console.log($(this).serialize());
 			$.ajax({
 				type: "POST",
-				url: "http://localhost/rox_send.php",
+				url: "http://localhost/rox_send2.php",
 
 		                //se serializeaza formularul pentru a fi trimis catre server
 		                data: $(this).serialize(),
 
 		        }).done(function(message) {
 		                console.log("succes");
-		        	$("input#firstname-field-signup").val("");
-		       	 	$("input#lastname-field-signup").val("");
-		        	$("input#email-field-signup").val("");
-		        	$("input#password-field-signup").val("");
-		        	$("input#secretq-field-signup").val("");
-		        	$("input#ecretans-field-signup").val("");
-	        	
+		        	$("input#name").val("");
+		       	 	$("input#age").val("");
+		        	$("input#jobtitle").val("");
+		        	$("option#manager").val("");
 				
 			}).fail(function() {
 				alert("error");
@@ -95,8 +92,6 @@ $(document).ready(function() {
 			
 			return false;
 		});
-
-		
 			
 });
 

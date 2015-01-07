@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,16 +9,19 @@
     <link rel="icon" href="img/cloud.ico">
 
     <link rel="stylesheet" href="dist/css/bootstrap.min.css">
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="dist/css/bootstrap-theme.min.css">
-	<!-- Custom styles for this template -->
+	   <!-- Optional theme -->
+	   <link rel="stylesheet" href="dist/css/bootstrap-theme.min.css">
+	   <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" >
 
+  
 	<script src="js/jquery-2.1.3.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
+
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="js/function.js"></script>
+  <script src="js/conectare.js"></script>
 
     <title>IceCloud</title>
 
@@ -26,7 +29,7 @@
 
   <body>
 
-    <div class="site-wrapper" id="background-picture" style='background-image: url("img/cloud.png"); background-repeat: no-repeat;
+    <div class="site-wrapper" id="background-picture" style='background-image: url("img/cover3.jpg"); background-repeat: no-repeat;
 	background-position: center; backgroud-color: rgba(0, 0, 0, 0.1)'>
 	<!--div class="site-wrapper"-->
 	<!-- IMAGINEA SA FIE DIRECT TRNSPARENTAAAAA -->
@@ -38,7 +41,7 @@
           <div class="masthead clearfix">
             <div class="inner">
             	<div>
-            	<img id="logo-mic" src="img/cloud2.png" width="40" height="40"></img>
+            	<img id="logo-mic" src="img/logo.png" width="40" height="40" style='padding:5px'></img>
      	        <h3 class="masthead-brand">IceCloud</h3>
      	    	</div>
               	<nav>
@@ -57,7 +60,7 @@
             <h1 class="cover-heading">Ice Cloud</h1>
             <br>
             <br>
-            <p class="lead">Where your information stays cold. Very cold.</p>
+            <p class="lead">Where your information stays cold as ice.</p>
             <br>
             <br>
             <p class="lead">
@@ -66,28 +69,41 @@
             </p>
           </div>
 
-          <div class="inner cover" id="about" style="text-align: left">
-            <h1 class="cover-heading">ABOUT</h1>
+          <div class="inner cover" id="about" style='text-align: left;'>
+          <!--  <h1 class="cover-heading">ABOUT</h1>-->
             <br>
             <br>
-            <p class="lead">Datorită creșterii informatiei digitale și a necesitatii de a stoca informații personale ușor accesibile prin
-intermediul internetui am ales sa implementam un serviciu de cloud, denumit Ice Cloud. Principala
-functionalitate al acestuia este de a permite userului sa stocheze informații personale precum
-documente, imagini și fisiere media.
-Fiind totodata constienti de existența unor servicii similare, am dorit sa implementam o versiune
-proprie a ceea ce reprezintă un cloud aducând o nuanta proprie și personală destinată momentan unui
-public restrans.
-Aplicația ofera posibilitatea crearii unui cont personal și securizat. Prin intermediul unui form în care
-utilizatorul își introduce datele personale precum nume, user name, parola, e-mail, întrebare de
-siguranța în cazul pierderii parolei curente.
-Odată creat contul curent utilizatorul are posibilitatea de a încarca date personale pe care le va putea
-accesa cu ajutorul accesări contului prin intermediul internetului</p>
+            <p class="lead">
+				<h2>We’re Ice-Cloud & We Value Your Data</h2>
+				<br>
+				<h5>
+					Since the beginning we have made a commitment to building privacy-oriented technologies. With
+					privacy comes inherent challenges but we view all of these challenges as an opportunity to recommit to
+					our core values. Ice-Cloud believes that everyone has the right to privacy and also to keep safe it's data.
+				</h5>
+				<br>
+				<h2>The Ice-Cloud Story</h2>
+				<br>
+				<h5>
+					Due to the growth of digital information and the need to store personal information easily accessible by
+					We chose to implement the Internet cloud service called Ice-Cloud. At the beginning, we were
+					interested in dispelling the myth that once data went online it could no longer be private and to also
+					keep this idea to simple to use with an attractive design. It was more of an academic problem to solve
+					than a commercial solution. Through this initial pursuit, the foundation of Ice-Cloud was laid. It was
+					important to encompass all data, from Mac to Windows, Linux server to network volume regardless of
+					size. Users are now empowered to share, sync and back up their data without compromising privacy
+					and also to keep it simple and attractive.
+				</h5>
+			</p>
           </div>
 
 
           <div class="inner cover" id="contact" style="text-align: left;">
             <!--h1 class="cover-heading" >Contact</h1-->
             <p class="lead">
+			  <h2>We would love to hear from you.</h2>
+			  <h3>Here's how to get in touch with someone at Ice-Cloud.</h3>
+			  <br>
               <address>
               <strong>UTCN - Universitatea Tehnica Cluj-Napoca</strong><br>
               34 Observatorului Street<br>
@@ -108,6 +124,15 @@ accesa cu ajutorul accesări contului prin intermediul internetului</p>
                 <strong>Roxana Mihalic</strong><br>
                 <a href="mailto:mihalic_roxana@yahoo.com">mihalic_roxana@yahoo.com</a>
                </p>
+
+               <!--form id="data-form">
+                  <input type="text" name="id" id="id" placeholder="id"></input>
+                  <input type="text" name="name" id="name" placeholder="name"></input>
+                  <input type="text" name="email" id="email" placeholder="email"></input>
+                  <input id="send" type="submit" value="Send"></input>
+                </form>
+                <button type="button" id="button-ajax">Ajax Magic</button-->
+
             </p>
            
           </div>
@@ -138,16 +163,16 @@ accesa cu ajutorul accesări contului prin intermediul internetului</p>
 	        <h4 class="modal-title">Sign In</h4>
 	      </div>
 	      <div class="modal-body">
-	        <img id="login-image" src="https://lh3.googleusercontent.com/-iU1g817mUOQ/AAAAAAAAAAI/AAAAAAAAACk/94n77koUiJU/photo.jpg" ></img>
-	        <div class="field">
-		        <input id="username-field" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-		        <input id="password-field" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+	        <img id="login-image" src="img/login.jpg" ></img>
+	        <form class="field" id="formSignIn">
+		        <input id="username-field" name="usernameSignIn" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+		        <input id="password-field" name="passSignIn" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
 		        <input id="checkbox-remember-me" type="checkbox">Remember me</input>
-		      </div>
+		      </form>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Sign In</button>
+	        <button type="button" id="signInButton" class="btn btn-primary">Sign In</button>
 	      </div>
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
@@ -162,22 +187,28 @@ accesa cu ajutorul accesări contului prin intermediul internetului</p>
 	        <h4 class="modal-title">Sign Up</h4>
 	      </div>
 	      <div class="modal-body">
-	        <img id="signup-image" src="img/icecream3.png" width ="200" height="300"></img>
-	        <div class="field2">
-	        	<input id="firstname-field-signup" type="text" class="form-control" placeholder="First Name" aria-describedby="basic-addon1">
-	        	<input id="lastname-field-signup" type="text" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1">
- 				<input id="email-field-signup" type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
-	        	<input id="username-field-signup" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-		        <input id="password-field-signup" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
-		        <input id="secretq-field-signup" type="text" class="form-control" placeholder="Secret Question" aria-describedby="basic-addon1">
-		        <input id="secretans-field-signup" type="password" class="form-control" placeholder="Secret Answer" aria-describedby="basic-addon1">
+	        <img id="signup-image" src="img/signup.jpg" width ="200" height="300" style=" vertical-align: top;"></img>
+	        
+          <form id="data-form" class="field2">
+	        	<input type="text" id="firstname-field-signup" name="firstname" class="form-control" placeholder="First Name" aria-describedby="basic-addon1"></input-->
+	        	<input id="lastname-field-signup" name="lastname" type="text" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1">
+ 				    <input id="email-field-signup" name="email" type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+	        	<input id="username-field-signup" name="username" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+		        <input id="password-field-signup" name="password" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+		        <input id="secretq-field-signup" name="secretq" type="text" class="form-control" placeholder="Secret Question" aria-describedby="basic-addon1">
+		        <input id="secretans-field-signup" name="secretans" type="password" class="form-control" placeholder="Secret Answer" aria-describedby="basic-addon1">
+            <button type="button" id="button-ajax">Ajax Magic</button>
+            
 		        <input id="checkbox-terms" type="checkbox">I agree to <a href="#" onclick="window.open('terms.html')">IceCloud Terms</a></input>
-		      </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input id="send" type="submit" value="Sign Up" class="btn btn-primary" </input>
+            </div>
+		      </form>
 	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary" id="signup2">Sign Up</button>
-	      </div>
+
+	      
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
