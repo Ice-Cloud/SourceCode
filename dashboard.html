@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/cloud.ico">
+
+    <title>IceCloud - Profile</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+        <link href="css/cover.css" rel="stylesheet">
+        <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" >
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/functionUser.js"></script>
+    <script src="js/uploadPhotos.js"></script>
+	<script src="js/function.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <!-- Diffent color for selected item in menu bar.-->
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <img id="logo-mic" src="img/cloud.ico" width="40" height="40" style='padding:5px'></img>
+              <h3 class="masthead-brand">IceCloud</h3>
+        </div>
+
+          <input id="uploadFile" type="text" placeholder="Choose File" disabled="enable"  />
+          <div class="fileUpload btn btn-primary">
+              <span>Upload</span>
+              <input id="uploadBtn" type="file" class="upload" />
+          </div>
+          
+          <input id="uploadNew"  style="display: none">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                <div class="btn-group nav navbar-nav navbar-right dropdown">
+                  <button type="button" class="btn btn-default  btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Profile</button>
+                 <button type="button" class="btn btn-default  btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                      <span class="caret"></span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a id="user_name" href="#">Name</a></li>
+                    <li><a id="userSettings" href="#">Settings</a></li>
+                    <li class="divider"></li>
+                    <li><a href="index.html" id="signoutButton">Sign Out</a></li>
+                  </ul>    
+                </div>
+                
+                <li><button class="btn btn-default  btn-sm" id="helpbutton1" style="margin-left: 15px; margin-right: 15px; margin-top: 10px;"> Help</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active" ><a href="#" id="all-l" >All <span class="sr-only">(current)</span></a></li>
+            <li><a href="#" id="all-l">Photos</a></li>
+            <li><a href="#" id="music-l">Music</a></li>
+            <li><a href="#" id="files-l">Files</a></li>
+            <li>
+            </li>
+          </ul>
+        </div>
+
+        
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Welcome</h1>
+
+           <div class="inner cover" id="all" class="hide">
+            <h1 class="cover-heading"></h1>
+            <p class="lead"> <table id="image-list">
+            </table></p>
+          </div>
+
+           <div class="inner cover" id="photos" class="hide">
+            <h1 class="cover-heading"></h1>
+            <p class="lead"> <table id="image-list">
+            </table></p>
+          </div>
+
+           <div class="inner cover" id="music" >
+            <h1 class="cover-heading">Music</h1>
+            <p class="lead"></p>
+          </div>
+
+           <div class="inner cover" id="files" >
+            <h1 class="cover-heading">Files</h1>
+            <p class="lead"></p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>&copy; &nbsp; &nbsp; Magda Buhu &nbsp; &nbsp; &nbsp; Ionut Indre &nbsp; &nbsp; &nbsp; Roxana Maria Mihalic</p>
+            </div>
+          </div> 
+        </div>
+      </div>
+
+      <div id="modal-help" class="modal fade">
+        <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="help">Help</h3>
+            </div>
+            <div class="modal-body">
+              <p> Poti sa iti schimbi datele dand click pe settings, iar pentru log out se da click pe sign out </p>  
+              <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    
+    </div> <!-- /.container-fluid -->
+
+    <div id="modal-update" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <img id="signup-image" src="img/signup.jpg" width ="200" height="250" style=" vertical-align: top; margin-top: 50px;"></img>
+          
+          <form id="data-form" class="field2">
+            <input type="text" id="firstname-field-update" name="firstnameUpdate" class="form-control" placeholder="First Name" aria-describedby="basic-addon1"></input>
+            <input id="lastname-field-update" name="lastnameUpdate" type="text" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1"></input>
+            <input id="email-field-signup" name="emailUpdate" type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1"></input>
+            <input id="password-field-update" name="passwordUpdate" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1"></input>
+
+            <div class="modal-footer">
+                <button type="closeButton" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input id="send" type="submit" value="Update" class="btn btn-primary" </input>
+            </div>
+          </form>
+        </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
