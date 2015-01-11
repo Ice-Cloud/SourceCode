@@ -27,20 +27,18 @@
 
   <body>
 
-    <div class="site-wrapper" style='background-image: url("img/cover9.jpg"); background-repeat: no-repeat;
-	background-position: center; backgroud-color: rgba(0, 0, 0, 0.1)'>
-	<!--div class="site-wrapper"-->
-	<!-- IMAGINEA SA FIE DIRECT TRNSPARENTAAAAA -->
+     <div class="site-wrapper" id="background-picture" style='background-image: url("img/about.jpg"); background-repeat: no-repeat;
+  background-position: center; backgroud-color: rgba(0, 0, 0, 0.1)'>
 
-      <div class="site-wrapper-inner">
+      <div class="site-wrapper-inner" style="z-index: 3">
 
         <div class="cover-container" >
 
           <div class="masthead clearfix">
             <div class="inner">
             	<div>
-            	<img id="logo-mic" src="img/icon.ico" width="40" height="40"></img>
-     	        <h4 class="masthead-brand"> <a href="#"  style="color: #fff" onclick="window.open('index.html')">IceCloud</a></h4>
+            	<img id="logo-mic" src="img/cloud.ico" width="40" height="40" style='padding:5px'></img>
+              <h3 class="masthead-brand">IceCloud</h3>
      	    	</div>
               	<nav>
                 	<ul class="nav masthead-nav">
@@ -48,7 +46,9 @@
                   		<li style="visibility: hidden"><a href="#" id="about-l">About</a></li>
                   		<li style="visibility: hidden"><a href="#" id="contact-l">Contact</a></li>
                   		<li style="visibility: hidden"><a href="#" id="info-l">Info</a></li>
-                  		<li id="login"> <a href='#'><!--button id="login" class="btn btn-default"-->Login<!--/button--> </a></li>
+                  		<li id="login"> <a href='#'>
+						<!--button id="login" class="btn btn-default"-->Login<!--/button--> 
+						</a></li>
                 	</ul>
               	</nav>
             </div>
@@ -244,7 +244,6 @@
 			</p>
           </div>
 
-
           <div class="mastfoot">
             <div class="inner">
               <p>&copy; &nbsp; &nbsp; Magda Buhu &nbsp; &nbsp; &nbsp; Ionut Indre &nbsp; &nbsp; &nbsp; Roxana Maria Mihalic</p>
@@ -257,7 +256,7 @@
 
     </div> <!-- ./site-wrapper-->
 
-	<div id="modal" class="modal fade">
+	<<div id="modal" class="modal fade">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -265,21 +264,20 @@
 	        <h4 class="modal-title">Sign In</h4>
 	      </div>
 	      <div class="modal-body">
-	        <img id="login-image" src="img/login.jpg" ></img>
-	        <div class="field">
-		        <input id="username-field" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-		        <input id="password-field" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
-		        <input id="checkbox-remember-me" type="checkbox">Remember me</input>
-		      </div>
+	        <img id="login-image" src="img/ice.png" style="width: 250px"></img>
+	        <form class="field" id="formSignIn">
+		        <input id="username-field" name="usernameSignIn" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" style="margin-top: 25px"></input>
+		        <input id="password-field" name="passSignIn" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1"></input>
+		  
+		      </form>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Sign In</button>
+	        <button type="button" id="signInButton" class="btn btn-primary">Sign In</button>
 	      </div>
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-
 
 	<div id="modal-signup" class="modal fade">
 	  <div class="modal-dialog">
@@ -289,7 +287,7 @@
 	        <h4 class="modal-title">Sign Up</h4>
 	      </div>
 	      <div class="modal-body">
-	        <img id="signup-image" src="img/signup.jpg" width ="200" height="300"></img>
+	        <img id="signup-image" src="img/icecream3.png" width ="200" height="300"></img>
 	        <div class="field2">
 	        	<input id="firstname-field-signup" type="text" class="form-control" placeholder="First Name" aria-describedby="basic-addon1">
 	        	<input id="lastname-field-signup" type="text" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1">
@@ -309,13 +307,5 @@
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/docs.min.js"></script-->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!--script src="../../assets/js/ie10-viewport-bug-workaround.js"></script-->
   </body>
 </html>

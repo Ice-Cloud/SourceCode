@@ -1,5 +1,3 @@
-//aici folosim!
-
 $(document).ready(function() {
 	var loginClicked = false;
 	$("#login").click(function() {
@@ -18,7 +16,7 @@ $(document).ready(function() {
 			$("#background-picture").removeAttr("style");
 		}
 		else {
-			document.getElementById("background-picture").setAttribute("style", "background-image: url('img/cloud.png'); background-repeat: no-repeat; background-position: center;");
+			document.getElementById("background-picture").setAttribute("style", "background-image: url('img/cover3.jpg'); background-repeat: no-repeat; background-position: center;");
 		}
 
 		$(".inner.cover").removeClass("show");
@@ -31,52 +29,51 @@ $(document).ready(function() {
 
 	$("#send").click(function(){
 		if ($('input#checkbox-terms').prop('checked') == false) {
-			alert("Nu ai citit!");
+			alert("You didn't read the Terms!");
 		}
 	});
 
 
-//LUAREA  si punerea DE DATE DIN/in DB
+//Work with DB
 
 	$("#button-ajax").click(function() {
 	console.log("yo");
 	$("ul").remove();
 	$.ajax({
-		// tipul request-ului
+		// Request type.
 		type: "GET",
-		// adresa unde se face reuqest-ul
-		url: "http://localhost/rox.php",
-		// se foloseste pentru a identifica tipul datelor (daca nu se specifica datele vor fi preluate ca si String)
+		// URL 
+		url: "http://localhost/selectLogDB.php",
+		// Data type.
 		dataType: "json",
-		// daca request-ul reuseste 
+		// Succes
 		success: function(data) {
-			// parcurge data, creaza un element <ul> pt fiecare obiect din mesajul json
+			//create ul with data
 			for(var i=0; i<data.length; i++) {
 				$("body").append("<ul></ul>");
-				// creaza u element in lista pentru fiecare atribut al obiectului json 
+				// create ul for attribute
 				for (key in data[i]) {
 					$("ul:last-child")
 					.append("<li>"+key+": "+data[i][key]+"</li>")
 				}
 			}
 		},
-		// daca request-ul nu reuseste
+		// fail
 		error: function() {
-			alert("fetch error");
+			alert("Fetch error.");
 		}
 
 	});
 	});
 
-
-		// cand se apasa butonul de submit
+		//Submit Form.
 		$("form#data-form").submit(function() {
 			console.log($(this).serialize());
 			$.ajax({
 				type: "POST",
-				url: "http://localhost/rox_send.php",
+				url: "http://localhost/insertLogDb.php",
 
-		                //se serializeaza formularul pentru a fi trimis catre server
+		                //Serialization.
 		                data: $(this).serialize(),
 
 		        }).done(function(message) {
@@ -96,6 +93,30 @@ $(document).ready(function() {
 			return false;
 		});
 
+		$("button#signInButton").click(function() {
+			console.log("aici!");
+		$.ajax({
+				type: "POST",
+				url: "http://localhost/log_in.php",
+
+		        //Serialization.
+		        data: $("form#formSignIn").serialize(),
+
+		        }).done(function(message) {
+		        		message = JSON.parse(message);
+		        		console.log("message");
+		                if (message['message'] == "success") {
+		                	var username = message['username'];
+		    				var userWindow = window.open("dashboard.html", "_self");
+		                   	userWindow.name = message['username'] + " " + message['id'];
+		                } else {
+		                	alert("Incorrect username or password");
+		                }
+				
+    			}).fail(function() {
+    				alert("error");
+    			});
+		});
 		
 			
 });

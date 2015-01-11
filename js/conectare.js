@@ -1,26 +1,26 @@
 $("#button-ajax").click(function() {
-	console.log("yo");
+	console.log("Enter Ajax");
 	$("ul").remove();
 	$.ajax({
-		// tipul request-ului
+		// Request type.
 		type: "GET",
-		// adresa unde se face reuqest-ul
-		url: "http://localhost/rox.php",
-		// se foloseste pentru a identifica tipul datelor (daca nu se specifica datele vor fi preluate ca si String)
+		// URL Request
+		url: "http://localhost/selectLogDB.php",
+		// Data Type specfication otherway strings.
 		dataType: "json",
-		// daca request-ul reuseste 
+		// Request Done.
 		success: function(data) {
-			// parcurge data, creaza un element <ul> pt fiecare obiect din mesajul json
+			// Create UL for every data.
 			for(var i=0; i<data.length; i++) {
 				$("body").append("<ul></ul>");
-				// creaza u element in lista pentru fiecare atribut al obiectului json 
+				// Create UL in list.
 				for (key in data[i]) {
 					$("ul:last-child")
 					.append("<li>"+key+": "+data[i][key]+"</li>")
 				}
 			}
 		},
-		// daca request-ul nu reuseste
+		// Request Fail.
 		error: function() {
 			alert("fetch error");
 		}
@@ -28,19 +28,18 @@ $("#button-ajax").click(function() {
 	});
 	});
 
-
-		// cand se apasa butonul de submit
+		// Submit form.
 		$("form#data-form").submit(function() {
 			console.log($(this).serialize());
 			$.ajax({
 				type: "POST",
-				url: "http://localhost/rox_send.php",
+				url: "http://localhost/insertLogDb.php",
 
-		                //se serializeaza formularul pentru a fi trimis catre server
+		                //Serialization.
 		                data: $(this).serialize(),
 
 		        }).done(function(message) {
-		                console.log("succes");
+		               console.log("succes");
 		        	$("input#name").val("");
 		       	 	$("input#age").val("");
 		        	$("input#jobtitle").val("");
@@ -52,4 +51,4 @@ $("#button-ajax").click(function() {
 			
 			return false;
 		});
-			
+		
