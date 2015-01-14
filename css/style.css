@@ -1,0 +1,123 @@
+body{
+	z-index: 0;
+}
+
+.buttons {
+	width: 15%;
+	height: 5%;
+	position: absolute;
+	top:50%;
+	left:40%;
+}
+
+.fields {
+	width: 15%;
+	height: 5%;
+	position: absolute;
+	top:30%;
+	left:40%;
+}
+
+#login {
+	display: inline-block;
+}
+
+.field {
+	width: 50%;
+	display: inline-block;
+}
+
+.field2 {
+	width: 50%;
+	display: inline-block;
+}
+
+#username-field{
+	margin-bottom: 10px;
+}
+
+#firstname-field-signup{
+	margin-bottom: 10px;
+}
+
+#lastname-field-signup{
+	margin-bottom: 10px;	
+}
+
+#email-field-signup {
+	margin-bottom: 10px;
+}
+
+#username-field-signup{
+	margin-bottom: 10px;	
+}
+
+#password-field-signup{
+	margin-bottom: 10px;
+}
+	
+#secretq-field-signup{
+	margin-bottom: 10px;	
+}	
+
+#secretans-field-signup{
+	margin-bottom: 10px;
+}
+
+#login-image{
+	display: inline-block;
+}
+
+#signup-image{
+	display: inline-block;
+}
+
+#logo-mic {
+	float: left;
+	display: inline-block;
+}
+
+#iceCream {
+	opacity: 0.4;
+	position: absolute;
+	z-index: -1;
+	top: 20%;
+	left: 40%;
+	float: left;
+}
+
+#home{
+
+}
+
+#about{
+	display: none;
+}
+
+#contact{
+	display: none;
+}
+
+#info{
+	display: none;
+}
+
+.show{
+	display: block;
+}
+
+.hide{
+	display: none;
+}
+
+#checkbox-remember-me{
+	color: black;
+}
+
+.modal{
+	color:black;
+}
+
+#contact {
+    background-image:none
+}

@@ -1,0 +1,17 @@
+<?php header('Access-Control-Allow-Origin: *');
+	  header('Content-Type:text/plain'); 
+
+require_once('connectionSettings.php');
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+ 
+$id_path = $_POST['q'] ;
+$entityBody = file_get_contents('php://input');
+$result2 = mysqli_query($conn,"INSERT INTO images2 VALUES (image_path='$entityBody', user_id='3');
+
+
+
+mysqli_close($conn);
+?>
